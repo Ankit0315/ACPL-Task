@@ -10,7 +10,6 @@ export class ApiService {
   private apiUrl = "http://localhost:5092/api/employee";
 
    constructor(private http: HttpClient) { }
-   
    saveCandidate(body: any): Observable<any> {
     console.log(body)
     return this.http.post<any>(this.apiUrl, body, {
