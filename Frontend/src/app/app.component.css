@@ -1,0 +1,292 @@
+/* Style form labels */
+.body {
+  padding: 150px;
+}
+form#contactForm {
+  width: 70%;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  width: 100%;
+}
+
+/* input[type="text"], */
+input[type="email"],
+input[type="number"],
+select {
+  width: 210% !important;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="file"] {
+  width: 70%;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #9646f1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Style the MultiSelectTag container */
+.multi-select-tag {
+  margin-bottom: 15px;
+}
+
+.name-container {
+  display: flex;
+}
+
+.contact-container {
+  display: flex;
+}
+
+.contact-container label {
+  font-weight: bold;
+}
+
+.contact-container input {
+  width: 218%;
+}
+
+.interest-budget-container {
+  display: flex;
+}
+
+.interest-budget-container label {
+  font-weight: bold;
+}
+
+.interest-budget-container input {
+  width: 218%;
+}
+
+/* Style the "Company" input field */
+input[name="company"] {
+  width: 98%;
+}
+
+.space {
+  margin-right: 242px;
+}
+.space1 {
+  margin-right: 210px;
+}
+/* Style the "About Project"  */
+textarea#aboutProject {
+  width: 95%;
+  height: 20vh;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label[for="file"] {
+  margin-top: 10px;
+  display: block;
+}
+
+.save-button {
+  background-color: purple;
+  color: white;
+}
+
+.cancel-button {
+  background-color: black;
+  color: white;
+}
+
+/* Custom CSS for table */
+
+.table {
+  width:95% !important;
+  border-collapse: collapse;
+  font-weight: normal !important;
+}
+
+.table th,
+.table td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.table thead th {
+  border-bottom: none;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-weight: normal !important;
+}
+
+.table th,
+.table td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.table thead th {
+  border-bottom: none;
+  font-style: bold;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+label {
+  font-weight: normal !important;
+}
+
+.technologies {
+  width: 100% !important;
+}
+.aboutProject {
+  height: 100px !important;
+}
+.contact {
+  border-radius: 5px;
+  border-color: #ccc;
+}
+.company {
+  width: 95% !important;
+}
+.interset {
+  width: 170% !important;
+}
+.budget {
+  width: 440% !important;
+}
+.cancle {
+  background-color: rgb(128, 150, 155);
+}
+.button-container {
+  display: flex;
+}
+.multi-select {
+  display: inline-block;
+  position: relative;
+  width: 95%;
+}
+
+.select-box {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  user-select: none;
+  width: 100%;
+  min-height: 25px;
+  justify-content: space-between;
+}
+
+.selected-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.selected-option {
+  display: flex;
+  align-items: center;
+  background-color: #9646f1;
+  color: #fff;
+  border-radius: 3px;
+  padding: 2px 5px;
+  margin-right: 5px;
+  cursor: pointer;
+ 
+}
+
+.selected-option span {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  cursor: pointer;
+}
+.dropdown-list {
+  list-style: none;
+  cursor: pointer;
+  margin-left: -32px;
+}
+.dropdown-list > li:hover {
+  background-color: #9646f1;
+  color: white;
+}
+
+
+.Editbtn{
+  padding: 0px;
+  width:48px;
+  height: 25px;
+font-size: 14px;
+text-align: center;
+background-color: rgb(23, 20, 234); 
+}
+.Deletbtn{
+  padding: 0px;
+  width:48px;
+  height: 25px;
+  font-size: 14px;
+  text-align: center;
+  background-color: rgb(234, 20, 20); 
+}
+.Savebtn{
+  padding: 0px;
+  width:48px;
+  height: 25px;
+  font-size: 14px;
+  text-align: center;
+  background-color: rgb(20, 234, 73); 
+}
+.canclebtn{
+  padding: 0px;
+  width:48px;
+  height: 25px;
+  font-size: 14px;
+  text-align: center;
+  background-color: rgb(23, 20, 234); 
+}
+
+.int{
+  width: 80% !important;
+}
+.tblrowinput{
+  /* padding:0px; */
+  margin-bottom: -10px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80% !important;
+}
+input[type="text"]{
+  width: 210%;
+   padding: 10px;
+  margin-bottom: 15px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* width: 80% !important; */
+}

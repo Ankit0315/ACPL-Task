@@ -1,0 +1,221 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="heading">
+    <h2>Basic Form</h2>
+    <p>
+      This is the most basic and default form having input,labels and buttons
+    </p>
+  </div>
+
+  <div class="name-container">
+    <div>
+      <label for="firstName">FIRST NAME</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        ngModel
+        required
+        class="firstname"
+      />
+    </div>
+
+    <div class="space"></div>
+
+    <div>
+      <label for="lastName">LAST NAME</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        ngModel
+        required
+        class="lastName"
+      />
+    </div>
+  </div>
+
+  <div class="contact-container">
+    <div>
+      <label for="email">EMAIL</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        ngModel
+        required
+        email
+        class="Email"
+      />
+    </div>
+
+    <div class="space"></div>
+
+    <div>
+      <label for="contactNumber">CONTACT NUMBER</label>
+      <input
+        type="number"
+        id="contactNumber"
+        name="contactNumber"
+        ngModel
+        class="contact"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="company">COMPANY</label>
+    <input type="text" id="company" name="company" ngModel class="company" />
+  </div>
+
+  <div class="interest-budget-container">
+    <div>
+      <label for="interests">INTERESTED IN</label>
+      
+
+      <select name="interests" id="interests" ngModel required class="interset">
+        <option value="" disabled selected>Interested in</option>
+        <option value="Senior Developer">Senior Developer</option>
+        <option value="Frontend developer">Frontend Developer</option>
+        <option value="MERN stack Developer">MERN Stack Developer</option>
+        <option value="Backend Developer">Backend Developer</option>
+        <option value="Associate Software Engineer">
+          Associate Software Engineer
+        </option>
+      </select>
+    </div>
+
+    <div class="space1"></div>
+
+    <div>
+      <label for="budget">BUDGET</label>
+      
+      <select name="budget" id="budget" ngModel required class="budget">
+        <option value="" disabled selected>Budget</option>
+        <option value="$250">$250</option>
+        <option value="$110">$110</option>
+        <option value="$150">$150</option>
+        <option value="$40">$40</option>
+        <option value="$90">$90</option>
+      </select>
+    </div>
+  </div>
+  <br />
+
+  <label for="technologies">TECHNOLOGIES</label>
+  <div class="multi-select">
+    <div class="select-box" (click)="toggleDropdown()">
+      <div class="selected-items">
+        <div *ngFor="let option of selectedOptions" class="selected-option">
+          {{ option }}
+          <span (click)="removeOption(option)">x</span>
+        </div>
+      </div>
+      <div class="dropdown-icon">&#9660;</div>
+    </div>
+    <ul *ngIf="isDropdownOpen" class="dropdown-list">
+      <li *ngFor="let option of options" (click)="toggleOption(option)">
+        {{ option }}
+      </li>
+    </ul>
+  </div>
+
+  <br />
+  <br />
+
+  <div>
+    <label for="file">SELECT FILE</label>
+    <input type="file" id="file" name="file" ngModel />
+  </div>
+
+  <div>
+    <label for="aboutProject">ABOUT PROJECT</label>
+    <textarea
+      id="aboutProject"
+      name="aboutProject"
+      ngModel
+      class="aboutProject"
+    ></textarea>
+  </div>
+
+  <div class="button-container">
+    <button><i class="fas fa-save"></i> Save</button>
+
+    <button (click)="resetForm(myForm)" class="cancle">
+      <i class="fas fa-times"></i> Cancel
+    </button>
+  </div>
+</form>
+
+<br />
+<br />
+<table class="table" *ngIf="employees && employees.length > 0">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">FirstName</th>
+      <th scope="col">LastName</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td *ngIf="!employee.editMode">{{ employee.firstName }}</td>
+      <td *ngIf="!employee.editMode">{{ employee.lastName }}</td>
+      <td *ngIf="!employee.editMode">{{ employee.designation }}</td>
+      <td *ngIf="employee.editMode">
+        <input
+          type="text"
+          [(ngModel)]="employee.firstName"
+          name="firstName"
+          class="tblrowinput"
+          required
+        />
+      </td>
+      <td *ngIf="employee.editMode">
+        <input
+          type="text"
+          [(ngModel)]="employee.lastName"
+          name="lastName"
+          class="tblrowinput"
+          required
+        />
+      </td>
+      <td *ngIf="employee.editMode">
+        <select
+          name="interests"
+          id="interests"
+          class="int"
+          [(ngModel)]="employee.designation"
+          name="designation"
+          required
+        >
+          <option value="" disabled selected>Interested in</option>
+          <option value="Senior Developer">Senior Developer</option>
+          <option value="Frontend developer">Frontend Developer</option>
+          <option value="MERN stack Developer">MERN Stack Developer</option>
+          <option value="Backend Developer">Backend Developer</option>
+          <option value="Associate Software Engineer">
+            Associate Software Engineer
+          </option>
+        </select>
+      </td>
+      <td>
+        <ng-container *ngIf="!employee.editMode" class="btn">
+          <button class="Editbtn" (click)="editEmployee(employee)">Edit</button>
+          <button class="Deletbtn" (click)="deleteEmployee(employee)">
+            Delete
+          </button>
+        </ng-container>
+        <ng-container *ngIf="employee.editMode">
+          <button class="Savebtn" (click)="saveEmployee(employee)">Save</button>
+          <br /><br />
+          <button class="canclebtn" (click)="cancelEdit(employee)">
+            Cancel
+          </button>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>
